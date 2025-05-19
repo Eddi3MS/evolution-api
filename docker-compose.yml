@@ -6,6 +6,8 @@ services:
     env_file: .env
     ports:
       - '127.0.0.1:${SERVER_PORT}:8080'
+    networks:
+      - eddie3-networks
     depends_on:
       - postgres
       - redis
@@ -36,6 +38,9 @@ services:
     image: redis:6
     container_name: redis
     restart: always
+networks:
+  eddie3-networks:
+    external: true
 volumes:
   evolution_instances:
   pg_data:
