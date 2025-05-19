@@ -27,9 +27,6 @@ postgres-shell:
 	@echo "🐘 Acessando o PostgreSQL..."
 	$(COMPOSE) exec postgres psql -U evolution -d evolution
 
-minio-browser:
-	@echo "🌐 Abrindo o console do MinIO em http://localhost:9001"
-
 rebuild:
 	@echo "🔄 Rebuildando os containers..."
 	$(COMPOSE) up -d --build
